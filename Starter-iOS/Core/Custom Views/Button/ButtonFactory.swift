@@ -24,6 +24,7 @@ class ButtonFactory {
         button.titleLabel?.font = style.font
         button.backgroundColor = style.backgroundColor
         button.layer.cornerRadius = style.cornerRadius
+        button.isUserInteractionEnabled = true
     }
     
     private static func applyBorder(button: UIButton, with border: ButtonConfiguration.Border?) {

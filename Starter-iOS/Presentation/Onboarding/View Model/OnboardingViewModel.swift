@@ -22,8 +22,8 @@ class OnboardingViewModel {
     
     init() {
         let initialPages = [
-            OnboardingPage(title: "Welcome", description: "Welcome to our app"),
-            OnboardingPage(title: "Explore", description: "Explore the features"),
+            OnboardingPage(title: "Welcome", description: "Welcome to our app", imageName: "Person"),
+            OnboardingPage(title: "Explore", description: "Explore the features", imageName: "Person"),
         ]
         pagesSubject.onNext(initialPages)
     }

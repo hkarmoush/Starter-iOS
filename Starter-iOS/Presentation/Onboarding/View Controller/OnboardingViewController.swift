@@ -17,6 +17,7 @@ class OnboardingViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.height)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.isPagingEnabled = true
@@ -29,9 +30,9 @@ class OnboardingViewController: UIViewController {
     private lazy var nextButton: UIButton = {
         ButtonFactory.create(with: .init(
             title: "Next",
-            titleColor: .white,
+            titleColor: .green,
             font: UIFont.systemFont(ofSize: 16),
-            backgroundColor: .blue,
+            backgroundColor: .red,
             cornerRadius: 10
         ))
     }()
@@ -59,13 +60,13 @@ class OnboardingViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            nextButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
             nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20),
             nextButton.widthAnchor.constraint(equalToConstant: 200),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
         ])
