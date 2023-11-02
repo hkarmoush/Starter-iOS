@@ -9,13 +9,13 @@ import UIKit
 
 class LabelFactory {
 
-    static func create(with style: LabelStyle) -> UILabel {
+    static func create(with style: LabelConfiguration) -> UILabel {
         let label = UILabel()
         configure(label: label, with: style)
         return label
     }
     
-    private static func configure(label: UILabel, with style: LabelStyle) {
+    private static func configure(label: UILabel, with style: LabelConfiguration) {
         label.text = style.text
         label.textColor = style.textColor
         label.font = style.font

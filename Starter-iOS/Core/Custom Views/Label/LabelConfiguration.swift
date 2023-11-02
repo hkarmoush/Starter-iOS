@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct LabelStyle {
+struct LabelConfiguration {
     var text: String
     var textColor: UIColor
     var font: UIFont

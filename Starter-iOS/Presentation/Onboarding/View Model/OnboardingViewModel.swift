@@ -20,13 +20,24 @@ class OnboardingViewModel {
         return currentIndexSubject.asObserver()
     }
     
-    init() {
-        let initialPages = [
-            OnboardingPage(title: "Welcome", description: "Welcome to our app", imageName: "Person"),
-            OnboardingPage(title: "Explore", description: "Explore the features", imageName: "Person"),
-        ]
-        pagesSubject.onNext(initialPages)
+    var pagesCount: Int {
+        return (try? pagesSubject.value().count) ?? 0
     }
+    
+    init() {
+        let onboardingPages = [
+            OnboardingPage(title: "Welcome", description: "Welcome to our app. Discover a seamless experience tailored for you.", imageName: "onboarding-welcome"),
+            OnboardingPage(title: "Explore", description: "Explore the features. Find tools and insights to help you achieve more.", imageName: "onboarding-explore"),
+            OnboardingPage(title: "Stay Connected", description: "Stay connected with your friends and colleagues. Never miss out on an important update.", imageName: "onboarding-connected"),
+            OnboardingPage(title: "Organize", description: "Organize your tasks and projects efficiently. Boost your productivity.", imageName: "onboarding-organize"),
+            OnboardingPage(title: "Achieve", description: "Set your goals and track your progress. Achieve your dreams step by step.", imageName: "onboarding-achieve"),
+            OnboardingPage(title: "Enjoy", description: "Enjoy a clutter-free and enjoyable user interface. Designed for easy use.", imageName: "onboarding-enjoy"),
+            OnboardingPage(title: "Privacy", description: "Your privacy matters. Control your data and know it's safe with us.", imageName: "onboarding-privacy"),
+            OnboardingPage(title: "Support", description: "Got questions? Our support team is here to help you every step of the way.", imageName: "onboarding-support")
+        ]
+        pagesSubject.onNext(onboardingPages)
+    }
+    
     
     func nextPage() {
         currentIndexSubject
@@ -49,4 +60,8 @@ class OnboardingViewModel {
             })
             .dispose()
     }
+    
+    func setCurrentIndex(to index: Int) {
+            currentIndexSubject.onNext(index)
+        }
 }
