@@ -34,6 +34,12 @@
 		FC18E98B2AF31E41008316D4 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FC18E98A2AF31E41008316D4 /* RxRelay */; };
 		FC18E98E2AF31E52008316D4 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = FC18E98D2AF31E52008316D4 /* Swinject */; };
 		FC18E9912AF31FB8008316D4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9902AF31FB8008316D4 /* OnboardingViewController.swift */; };
+		FC86280B2AF45F8A00F3CB7A /* PageControlConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86280A2AF45F8A00F3CB7A /* PageControlConfiguration.swift */; };
+		FC86280D2AF45FAA00F3CB7A /* PageControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86280C2AF45FAA00F3CB7A /* PageControlFactory.swift */; };
+		FC8628102AF4611400F3CB7A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86280F2AF4611400F3CB7A /* OnboardingCollectionViewCell.swift */; };
+		FC8628142AF4636300F3CB7A /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628132AF4636300F3CB7A /* Reactive.swift */; };
+		FC8628162AF4673600F3CB7A /* OnboardingViewController+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628152AF4673600F3CB7A /* OnboardingViewController+Binding.swift */; };
+		FC8628182AF4679600F3CB7A /* OnboardingViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628172AF4679600F3CB7A /* OnboardingViewController+UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,12 @@
 		FC18E9802AF31DDA008316D4 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		FC18E9832AF31E0E008316D4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FC18E9902AF31FB8008316D4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		FC86280A2AF45F8A00F3CB7A /* PageControlConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlConfiguration.swift; sourceTree = "<group>"; };
+		FC86280C2AF45FAA00F3CB7A /* PageControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlFactory.swift; sourceTree = "<group>"; };
+		FC86280F2AF4611400F3CB7A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		FC8628132AF4636300F3CB7A /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		FC8628152AF4673600F3CB7A /* OnboardingViewController+Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+Binding.swift"; sourceTree = "<group>"; };
+		FC8628172AF4679600F3CB7A /* OnboardingViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +180,7 @@
 		FC18E95A2AF30B79008316D4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FC8628112AF4634F00F3CB7A /* Extensions */,
 				FC18E95B2AF30B80008316D4 /* Custom Views */,
 			);
 			path = Core;
@@ -176,6 +189,7 @@
 		FC18E95B2AF30B80008316D4 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				FC8628092AF45F7800F3CB7A /* Page Control */,
 				FC18E9752AF317E1008316D4 /* Textfield */,
 				FC18E96E2AF30FB1008316D4 /* Action Sheet */,
 				FC18E96B2AF30F89008316D4 /* Alert */,
@@ -265,6 +279,7 @@
 		FC18E97B2AF31D94008316D4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				FC86280E2AF4610500F3CB7A /* Cells */,
 				FC18E98F2AF31FA2008316D4 /* View Controller */,
 				FC18E9822AF31DFF008316D4 /* View Model */,
 				FC18E97C2AF31DAD008316D4 /* Models */,
@@ -293,8 +308,43 @@
 			isa = PBXGroup;
 			children = (
 				FC18E9902AF31FB8008316D4 /* OnboardingViewController.swift */,
+				FC8628152AF4673600F3CB7A /* OnboardingViewController+Binding.swift */,
+				FC8628172AF4679600F3CB7A /* OnboardingViewController+UI.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		FC8628092AF45F7800F3CB7A /* Page Control */ = {
+			isa = PBXGroup;
+			children = (
+				FC86280A2AF45F8A00F3CB7A /* PageControlConfiguration.swift */,
+				FC86280C2AF45FAA00F3CB7A /* PageControlFactory.swift */,
+			);
+			path = "Page Control";
+			sourceTree = "<group>";
+		};
+		FC86280E2AF4610500F3CB7A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC86280F2AF4611400F3CB7A /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FC8628112AF4634F00F3CB7A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628122AF4635800F3CB7A /* Reactive */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FC8628122AF4635800F3CB7A /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628132AF4636300F3CB7A /* Reactive.swift */,
+			);
+			path = Reactive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,13 +494,19 @@
 				FC18E9842AF31E0E008316D4 /* OnboardingViewModel.swift in Sources */,
 				FC18E9602AF30BE2008316D4 /* ButtonFactory.swift in Sources */,
 				FC18E9792AF31870008316D4 /* TextfieldFactory.swift in Sources */,
+				FC8628102AF4611400F3CB7A /* OnboardingCollectionViewCell.swift in Sources */,
 				FC18E97E2AF31DBD008316D4 /* OnboardingPage.swift in Sources */,
+				FC8628162AF4673600F3CB7A /* OnboardingViewController+Binding.swift in Sources */,
 				FC18E95E2AF30BBC008316D4 /* ButtonConfiguration.swift in Sources */,
 				FC18E96A2AF30E96008316D4 /* LabelFactory.swift in Sources */,
 				FC18E96D2AF30F9A008316D4 /* AlertType.swift in Sources */,
+				FC8628142AF4636300F3CB7A /* Reactive.swift in Sources */,
 				FC18E92B2AF30B05008316D4 /* AppDelegate.swift in Sources */,
 				FC18E9702AF30FC1008316D4 /* ActionSheetType.swift in Sources */,
+				FC86280B2AF45F8A00F3CB7A /* PageControlConfiguration.swift in Sources */,
+				FC86280D2AF45FAA00F3CB7A /* PageControlFactory.swift in Sources */,
 				FC18E9812AF31DDA008316D4 /* OnboardingModel.swift in Sources */,
+				FC8628182AF4679600F3CB7A /* OnboardingViewController+UI.swift in Sources */,
 				FC18E92D2AF30B05008316D4 /* SceneDelegate.swift in Sources */,
 				FC18E9742AF30FFE008316D4 /* ActionSheetFactory.swift in Sources */,
 				FC18E9682AF30DFA008316D4 /* LabelConfiguration.swift in Sources */,
