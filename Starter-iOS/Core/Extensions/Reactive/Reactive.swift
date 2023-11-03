@@ -11,7 +11,7 @@ import RxCocoa
 
 extension Reactive where Base: UIViewController {
     var viewDidLayoutSubviews: ControlEvent<Void> {
-        let source = self.methodInvoked(#selector(Base.viewDidLayoutSubviews)).map { _ in }
-        return ControlEvent(events: source)
+        let events = self.methodInvoked(#selector(Base.viewDidLayoutSubviews)).map { _ in }
+        return ControlEvent(events: events)
     }
 }
