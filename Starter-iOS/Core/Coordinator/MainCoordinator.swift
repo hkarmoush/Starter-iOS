@@ -27,16 +27,23 @@ class MainCoordinator: Coordinator {
     }
     
     private func showOnboarding() {
-        let onboardingViewModel = OnboardingViewModel()
-        let onboardingViewController = OnboardingViewController(viewModel: onboardingViewModel)
-        onboardingViewController.coordinatorDelegate = self
-        navigationController.pushViewController(onboardingViewController, animated: true)
+        let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController)
+        onboardingCoordinator.parentCoordinator = self
+        childCoordinators.append(onboardingCoordinator)
+        onboardingCoordinator.start()
     }
     
     private func showMainInterface() {
-        // Setup the main view controller
-        //        let homeViewController = HomeViewController()
-        //        homeViewController.coordinator = self
-        //        navigationController.setViewControllers([homeViewController], animated: false)
+        // Setup and show the main view controller, for example:
+//        let homeViewController = HomeViewController()
+//        homeViewController.coordinator = self
+//        navigationController.setViewControllers([homeViewController], animated: false)
+    }
+    
+    func childDidFinish(_ child: Coordinator?) {
+        if let child = child, let index = childCoordinators.firstIndex(where: { $0 === child }) {
+            childCoordinators.remove(at: index)
+        }
+        // Here you can decide if you need to show the main interface or something else
     }
 }

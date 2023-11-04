@@ -10,6 +10,7 @@ import UIKit
 class OnboardingCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    weak var parentCoordinator: MainCoordinator?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -17,13 +18,14 @@ class OnboardingCoordinator: Coordinator {
     
     func start() {
         let onboardingViewModel = OnboardingViewModel()
-        let onboardingVC = OnboardingViewController(viewModel: onboardingViewModel)
+        let onboardingViewController = OnboardingViewController(viewModel: onboardingViewModel)
         
-        navigationController.pushViewController(onboardingVC, animated: true)
+        onboardingViewController.coordinatorDelegate = self
+        navigationController.pushViewController(onboardingViewController, animated: true)
     }
     
-    func finishOnboarding() {
-        // Here you would handle the transition to the next part of your application
-        // For example, if you have a MainAppCoordinator, you could start it here
+    func didFinishOnboarding() {
+        parentCoordinator?.childDidFinish(self)
     }
+    
 }
