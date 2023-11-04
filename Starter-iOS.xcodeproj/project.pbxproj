@@ -28,6 +28,11 @@
 		FC8628142AF4636300F3CB7A /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628132AF4636300F3CB7A /* Reactive.swift */; };
 		FC86281A2AF6EC4300F3CB7A /* OnboardingViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628192AF6EC4200F3CB7A /* OnboardingViewController+UI.swift */; };
 		FC86281C2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86281B2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift */; };
+		FC86281F2AF7017A00F3CB7A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86281E2AF7017A00F3CB7A /* Coordinator.swift */; };
+		FC8628212AF7019200F3CB7A /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628202AF7019200F3CB7A /* OnboardingCoordinator.swift */; };
+		FC8628252AF703FF00F3CB7A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628242AF703FF00F3CB7A /* MainCoordinator.swift */; };
+		FC8628282AF70B1D00F3CB7A /* AppLaunchStateManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628272AF70B1D00F3CB7A /* AppLaunchStateManaging.swift */; };
+		FC86282A2AF70B4000F3CB7A /* AppLaunchStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628292AF70B4000F3CB7A /* AppLaunchStateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		FC8628132AF4636300F3CB7A /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		FC8628192AF6EC4200F3CB7A /* OnboardingViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UI.swift"; sourceTree = "<group>"; };
 		FC86281B2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+Binding.swift"; sourceTree = "<group>"; };
+		FC86281E2AF7017A00F3CB7A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FC8628202AF7019200F3CB7A /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		FC8628242AF703FF00F3CB7A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		FC8628272AF70B1D00F3CB7A /* AppLaunchStateManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchStateManaging.swift; sourceTree = "<group>"; };
+		FC8628292AF70B4000F3CB7A /* AppLaunchStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +166,8 @@
 		FC18E95A2AF30B79008316D4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FC8628262AF70B0B00F3CB7A /* Managers */,
+				FC86281D2AF7016700F3CB7A /* Coordinator */,
 				FC8628112AF4634F00F3CB7A /* Extensions */,
 			);
 			path = Core;
@@ -196,6 +208,7 @@
 		FC18E97B2AF31D94008316D4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				FC8628222AF7023500F3CB7A /* Coordinator */,
 				FC86280E2AF4610500F3CB7A /* Cells */,
 				FC18E98F2AF31FA2008316D4 /* View Controller */,
 				FC18E9822AF31DFF008316D4 /* View Model */,
@@ -253,6 +266,40 @@
 				FC8628132AF4636300F3CB7A /* Reactive.swift */,
 			);
 			path = Reactive;
+			sourceTree = "<group>";
+		};
+		FC86281D2AF7016700F3CB7A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FC86281E2AF7017A00F3CB7A /* Coordinator.swift */,
+				FC8628242AF703FF00F3CB7A /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FC8628222AF7023500F3CB7A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628202AF7019200F3CB7A /* OnboardingCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FC8628262AF70B0B00F3CB7A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FC86282B2AF70B8200F3CB7A /* App Launch */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FC86282B2AF70B8200F3CB7A /* App Launch */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628272AF70B1D00F3CB7A /* AppLaunchStateManaging.swift */,
+				FC8628292AF70B4000F3CB7A /* AppLaunchStateManager.swift */,
+			);
+			path = "App Launch";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC18E92F2AF30B05008316D4 /* ViewController.swift in Sources */,
+				FC8628252AF703FF00F3CB7A /* MainCoordinator.swift in Sources */,
 				FC18E9912AF31FB8008316D4 /* OnboardingViewController.swift in Sources */,
 				FC18E9842AF31E0E008316D4 /* OnboardingViewModel.swift in Sources */,
 				FC8628102AF4611400F3CB7A /* OnboardingCollectionViewCell.swift in Sources */,
@@ -403,8 +451,12 @@
 				FC8628142AF4636300F3CB7A /* Reactive.swift in Sources */,
 				FC18E92B2AF30B05008316D4 /* AppDelegate.swift in Sources */,
 				FC86281C2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift in Sources */,
+				FC86281F2AF7017A00F3CB7A /* Coordinator.swift in Sources */,
+				FC8628282AF70B1D00F3CB7A /* AppLaunchStateManaging.swift in Sources */,
 				FC18E9812AF31DDA008316D4 /* OnboardingModel.swift in Sources */,
+				FC8628212AF7019200F3CB7A /* OnboardingCoordinator.swift in Sources */,
 				FC18E92D2AF30B05008316D4 /* SceneDelegate.swift in Sources */,
+				FC86282A2AF70B4000F3CB7A /* AppLaunchStateManager.swift in Sources */,
 				FC86281A2AF6EC4300F3CB7A /* OnboardingViewController+UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
