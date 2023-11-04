@@ -15,17 +15,7 @@
 		FC18E9422AF30B08008316D4 /* Starter_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9412AF30B08008316D4 /* Starter_iOSTests.swift */; };
 		FC18E94C2AF30B08008316D4 /* Starter_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E94B2AF30B08008316D4 /* Starter_iOSUITests.swift */; };
 		FC18E94E2AF30B08008316D4 /* Starter_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E94D2AF30B08008316D4 /* Starter_iOSUITestsLaunchTests.swift */; };
-		FC18E95E2AF30BBC008316D4 /* ButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E95D2AF30BBC008316D4 /* ButtonConfiguration.swift */; };
-		FC18E9602AF30BE2008316D4 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E95F2AF30BE2008316D4 /* ButtonFactory.swift */; };
 		FC18E9652AF30C60008316D4 /* ButtonFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9642AF30C60008316D4 /* ButtonFactoryTests.swift */; };
-		FC18E9682AF30DFA008316D4 /* LabelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9672AF30DFA008316D4 /* LabelConfiguration.swift */; };
-		FC18E96A2AF30E96008316D4 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9692AF30E96008316D4 /* LabelFactory.swift */; };
-		FC18E96D2AF30F9A008316D4 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E96C2AF30F9A008316D4 /* AlertType.swift */; };
-		FC18E9702AF30FC1008316D4 /* ActionSheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E96F2AF30FC1008316D4 /* ActionSheetType.swift */; };
-		FC18E9722AF30FDB008316D4 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9712AF30FDB008316D4 /* AlertFactory.swift */; };
-		FC18E9742AF30FFE008316D4 /* ActionSheetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9732AF30FFE008316D4 /* ActionSheetFactory.swift */; };
-		FC18E9772AF31803008316D4 /* TextfieldConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9762AF31803008316D4 /* TextfieldConfiguration.swift */; };
-		FC18E9792AF31870008316D4 /* TextfieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9782AF31870008316D4 /* TextfieldFactory.swift */; };
 		FC18E97E2AF31DBD008316D4 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E97D2AF31DBD008316D4 /* OnboardingPage.swift */; };
 		FC18E9812AF31DDA008316D4 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9802AF31DDA008316D4 /* OnboardingModel.swift */; };
 		FC18E9842AF31E0E008316D4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9832AF31E0E008316D4 /* OnboardingViewModel.swift */; };
@@ -34,10 +24,10 @@
 		FC18E98B2AF31E41008316D4 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FC18E98A2AF31E41008316D4 /* RxRelay */; };
 		FC18E98E2AF31E52008316D4 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = FC18E98D2AF31E52008316D4 /* Swinject */; };
 		FC18E9912AF31FB8008316D4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9902AF31FB8008316D4 /* OnboardingViewController.swift */; };
-		FC86280B2AF45F8A00F3CB7A /* PageControlConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86280A2AF45F8A00F3CB7A /* PageControlConfiguration.swift */; };
-		FC86280D2AF45FAA00F3CB7A /* PageControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86280C2AF45FAA00F3CB7A /* PageControlFactory.swift */; };
 		FC8628102AF4611400F3CB7A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86280F2AF4611400F3CB7A /* OnboardingCollectionViewCell.swift */; };
 		FC8628142AF4636300F3CB7A /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628132AF4636300F3CB7A /* Reactive.swift */; };
+		FC86281A2AF6EC4300F3CB7A /* OnboardingViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628192AF6EC4200F3CB7A /* OnboardingViewController+UI.swift */; };
+		FC86281C2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86281B2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,25 +60,15 @@
 		FC18E9472AF30B08008316D4 /* Starter-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Starter-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC18E94B2AF30B08008316D4 /* Starter_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starter_iOSUITests.swift; sourceTree = "<group>"; };
 		FC18E94D2AF30B08008316D4 /* Starter_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starter_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FC18E95D2AF30BBC008316D4 /* ButtonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfiguration.swift; sourceTree = "<group>"; };
-		FC18E95F2AF30BE2008316D4 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		FC18E9642AF30C60008316D4 /* ButtonFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactoryTests.swift; sourceTree = "<group>"; };
-		FC18E9672AF30DFA008316D4 /* LabelConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelConfiguration.swift; sourceTree = "<group>"; };
-		FC18E9692AF30E96008316D4 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
-		FC18E96C2AF30F9A008316D4 /* AlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
-		FC18E96F2AF30FC1008316D4 /* ActionSheetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetType.swift; sourceTree = "<group>"; };
-		FC18E9712AF30FDB008316D4 /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
-		FC18E9732AF30FFE008316D4 /* ActionSheetFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetFactory.swift; sourceTree = "<group>"; };
-		FC18E9762AF31803008316D4 /* TextfieldConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldConfiguration.swift; sourceTree = "<group>"; };
-		FC18E9782AF31870008316D4 /* TextfieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldFactory.swift; sourceTree = "<group>"; };
 		FC18E97D2AF31DBD008316D4 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		FC18E9802AF31DDA008316D4 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		FC18E9832AF31E0E008316D4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FC18E9902AF31FB8008316D4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		FC86280A2AF45F8A00F3CB7A /* PageControlConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlConfiguration.swift; sourceTree = "<group>"; };
-		FC86280C2AF45FAA00F3CB7A /* PageControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlFactory.swift; sourceTree = "<group>"; };
 		FC86280F2AF4611400F3CB7A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		FC8628132AF4636300F3CB7A /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		FC8628192AF6EC4200F3CB7A /* OnboardingViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UI.swift"; sourceTree = "<group>"; };
+		FC86281B2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+Binding.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,31 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				FC8628112AF4634F00F3CB7A /* Extensions */,
-				FC18E95B2AF30B80008316D4 /* Custom Views */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		FC18E95B2AF30B80008316D4 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				FC8628092AF45F7800F3CB7A /* Page Control */,
-				FC18E9752AF317E1008316D4 /* Textfield */,
-				FC18E96E2AF30FB1008316D4 /* Action Sheet */,
-				FC18E96B2AF30F89008316D4 /* Alert */,
-				FC18E9662AF30DBA008316D4 /* Label */,
-				FC18E95C2AF30B87008316D4 /* Button */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		FC18E95C2AF30B87008316D4 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				FC18E95D2AF30BBC008316D4 /* ButtonConfiguration.swift */,
-				FC18E95F2AF30BE2008316D4 /* ButtonFactory.swift */,
-			);
-			path = Button;
 			sourceTree = "<group>";
 		};
 		FC18E9612AF30C42008316D4 /* Core */ = {
@@ -226,42 +183,6 @@
 				FC18E9642AF30C60008316D4 /* ButtonFactoryTests.swift */,
 			);
 			path = Button;
-			sourceTree = "<group>";
-		};
-		FC18E9662AF30DBA008316D4 /* Label */ = {
-			isa = PBXGroup;
-			children = (
-				FC18E9672AF30DFA008316D4 /* LabelConfiguration.swift */,
-				FC18E9692AF30E96008316D4 /* LabelFactory.swift */,
-			);
-			path = Label;
-			sourceTree = "<group>";
-		};
-		FC18E96B2AF30F89008316D4 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				FC18E96C2AF30F9A008316D4 /* AlertType.swift */,
-				FC18E9712AF30FDB008316D4 /* AlertFactory.swift */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
-		FC18E96E2AF30FB1008316D4 /* Action Sheet */ = {
-			isa = PBXGroup;
-			children = (
-				FC18E96F2AF30FC1008316D4 /* ActionSheetType.swift */,
-				FC18E9732AF30FFE008316D4 /* ActionSheetFactory.swift */,
-			);
-			path = "Action Sheet";
-			sourceTree = "<group>";
-		};
-		FC18E9752AF317E1008316D4 /* Textfield */ = {
-			isa = PBXGroup;
-			children = (
-				FC18E9762AF31803008316D4 /* TextfieldConfiguration.swift */,
-				FC18E9782AF31870008316D4 /* TextfieldFactory.swift */,
-			);
-			path = Textfield;
 			sourceTree = "<group>";
 		};
 		FC18E97A2AF31D8B008316D4 /* Presentation */ = {
@@ -304,17 +225,10 @@
 			isa = PBXGroup;
 			children = (
 				FC18E9902AF31FB8008316D4 /* OnboardingViewController.swift */,
+				FC8628192AF6EC4200F3CB7A /* OnboardingViewController+UI.swift */,
+				FC86281B2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift */,
 			);
 			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		FC8628092AF45F7800F3CB7A /* Page Control */ = {
-			isa = PBXGroup;
-			children = (
-				FC86280A2AF45F8A00F3CB7A /* PageControlConfiguration.swift */,
-				FC86280C2AF45FAA00F3CB7A /* PageControlFactory.swift */,
-			);
-			path = "Page Control";
 			sourceTree = "<group>";
 		};
 		FC86280E2AF4610500F3CB7A /* Cells */ = {
@@ -481,27 +395,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC18E9772AF31803008316D4 /* TextfieldConfiguration.swift in Sources */,
 				FC18E92F2AF30B05008316D4 /* ViewController.swift in Sources */,
-				FC18E9722AF30FDB008316D4 /* AlertFactory.swift in Sources */,
 				FC18E9912AF31FB8008316D4 /* OnboardingViewController.swift in Sources */,
 				FC18E9842AF31E0E008316D4 /* OnboardingViewModel.swift in Sources */,
-				FC18E9602AF30BE2008316D4 /* ButtonFactory.swift in Sources */,
-				FC18E9792AF31870008316D4 /* TextfieldFactory.swift in Sources */,
 				FC8628102AF4611400F3CB7A /* OnboardingCollectionViewCell.swift in Sources */,
 				FC18E97E2AF31DBD008316D4 /* OnboardingPage.swift in Sources */,
-				FC18E95E2AF30BBC008316D4 /* ButtonConfiguration.swift in Sources */,
-				FC18E96A2AF30E96008316D4 /* LabelFactory.swift in Sources */,
-				FC18E96D2AF30F9A008316D4 /* AlertType.swift in Sources */,
 				FC8628142AF4636300F3CB7A /* Reactive.swift in Sources */,
 				FC18E92B2AF30B05008316D4 /* AppDelegate.swift in Sources */,
-				FC18E9702AF30FC1008316D4 /* ActionSheetType.swift in Sources */,
-				FC86280B2AF45F8A00F3CB7A /* PageControlConfiguration.swift in Sources */,
-				FC86280D2AF45FAA00F3CB7A /* PageControlFactory.swift in Sources */,
+				FC86281C2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift in Sources */,
 				FC18E9812AF31DDA008316D4 /* OnboardingModel.swift in Sources */,
 				FC18E92D2AF30B05008316D4 /* SceneDelegate.swift in Sources */,
-				FC18E9742AF30FFE008316D4 /* ActionSheetFactory.swift in Sources */,
-				FC18E9682AF30DFA008316D4 /* LabelConfiguration.swift in Sources */,
+				FC86281A2AF6EC4300F3CB7A /* OnboardingViewController+UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

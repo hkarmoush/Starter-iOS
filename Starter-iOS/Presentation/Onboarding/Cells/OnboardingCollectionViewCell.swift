@@ -4,67 +4,85 @@
 //
 //  Created by Hasan Armoush on 03/11/2023.
 //
-
 import UIKit
 
 class OnboardingCollectionViewCell: UICollectionViewCell {
     static let identifier = "OnboardingCollectionViewCell"
     
     private let imageView = UIImageView()
-    private var titleLabel: UILabel!
-    private var descriptionLabel: UILabel!
+    private let titleLabel = UILabel()
+    private let descriptionLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
+        configureSubviews()
+        setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupViews()
+        fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupViews() {
-        
+    private func configureSubviews() {
+        configureImageView()
+        configureTitleLabel()
+        configureDescriptionLabel()
+    }
+    
+    private func configureImageView() {
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         contentView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-
-        let titleStyle = LabelConfiguration(text: "",
-                                    textColor: .black,
-                                    font: UIFont.boldSystemFont(ofSize: 18),
-                                    backgroundColor: .clear,
-                                    alignment: .center,
-                                    numberOfLines: 1)
-        titleLabel = LabelFactory.create(with: titleStyle)
+    }
+    
+    private func configureTitleLabel() {
+        titleLabel.text = ""
+        titleLabel.textColor = .black
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        titleLabel.backgroundColor = .clear
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 1
         contentView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        let descriptionStyle = LabelConfiguration(text: "",
-                                          textColor: .darkGray,
-                                          font: UIFont.systemFont(ofSize: 14),
-                                          backgroundColor: .clear,
-                                          alignment: .center,
-                                          numberOfLines: 2)
-        descriptionLabel = LabelFactory.create(with: descriptionStyle)
+    }
+    
+    private func configureDescriptionLabel() {
+        descriptionLabel.text = ""
+        descriptionLabel.textColor = .darkGray
+        descriptionLabel.font = UIFont.systemFont(ofSize: 14)
+        descriptionLabel.backgroundColor = .clear
+        descriptionLabel.textAlignment = .center
+        descriptionLabel.numberOfLines = 2
         contentView.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        setupConstraints()
     }
     
     private func setupConstraints() {
+        setupImageViewConstraints()
+        setupTitleLabelConstraints()
+        setupDescriptionLabelConstraints()
+    }
+    
+    private func setupImageViewConstraints() {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 200),
             imageView.heightAnchor.constraint(equalToConstant: 200),
-            
+        ])
+    }
+    
+    private func setupTitleLabelConstraints() {
+        NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
+        ])
+    }
+    
+    private func setupDescriptionLabelConstraints() {
+        NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
@@ -85,4 +103,3 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         descriptionLabel.text = nil
     }
 }
-
