@@ -35,9 +35,9 @@ class MainCoordinator: Coordinator {
     
     private func showMainInterface() {
         // Setup and show the main view controller, for example:
-//        let homeViewController = HomeViewController()
-//        homeViewController.coordinator = self
-//        navigationController.setViewControllers([homeViewController], animated: false)
+        //        let homeViewController = HomeViewController()
+        //        homeViewController.coordinator = self
+        //        navigationController.setViewControllers([homeViewController], animated: false)
     }
     
     func childDidFinish(_ child: Coordinator?) {

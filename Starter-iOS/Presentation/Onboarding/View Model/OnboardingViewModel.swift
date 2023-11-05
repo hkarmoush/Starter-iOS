@@ -59,6 +59,6 @@ class OnboardingViewModel {
     }
     
     func setCurrentIndex(to index: Int) {
-            currentIndexSubject.onNext(index)
-        }
+        currentIndexSubject.onNext(index)
+    }
 }
