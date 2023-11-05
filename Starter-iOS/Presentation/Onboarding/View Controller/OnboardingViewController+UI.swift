@@ -35,20 +35,25 @@ extension OnboardingViewController {
     func setupViews() {
         view.addSubview(collectionView)
         view.addSubview(pageControl)
-        setupConstraints()
+        setupCollectionViewConstraints()
+        setupPageControlConstraints()
     }
     
-    func setupConstraints() {
+    private func setupCollectionViewConstraints() {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    private func setupPageControlConstraints() {
+        NSLayoutConstraint.activate([
             pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 20),
+            pageControl.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
 }

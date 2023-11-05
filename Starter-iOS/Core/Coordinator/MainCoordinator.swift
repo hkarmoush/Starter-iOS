@@ -22,15 +22,15 @@ class MainCoordinator: Coordinator {
         if appLaunchStateManager.isFirstLaunch {
             showOnboarding()
         } else {
-            showMainInterface()
+            showOnboarding()
         }
     }
     
     private func showOnboarding() {
-        let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController)
-        onboardingCoordinator.parentCoordinator = self
-        childCoordinators.append(onboardingCoordinator)
-        onboardingCoordinator.start()
+        let coordinator = OnboardingCoordinator(navigationController: navigationController)
+        coordinator.parentCoordinator = self
+        childCoordinators.append(coordinator)
+        coordinator.start()
     }
     
     private func showMainInterface() {

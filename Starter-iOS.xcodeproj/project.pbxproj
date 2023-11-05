@@ -15,7 +15,6 @@
 		FC18E9422AF30B08008316D4 /* Starter_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9412AF30B08008316D4 /* Starter_iOSTests.swift */; };
 		FC18E94C2AF30B08008316D4 /* Starter_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E94B2AF30B08008316D4 /* Starter_iOSUITests.swift */; };
 		FC18E94E2AF30B08008316D4 /* Starter_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E94D2AF30B08008316D4 /* Starter_iOSUITestsLaunchTests.swift */; };
-		FC18E9652AF30C60008316D4 /* ButtonFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9642AF30C60008316D4 /* ButtonFactoryTests.swift */; };
 		FC18E97E2AF31DBD008316D4 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E97D2AF31DBD008316D4 /* OnboardingPage.swift */; };
 		FC18E9812AF31DDA008316D4 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9802AF31DDA008316D4 /* OnboardingModel.swift */; };
 		FC18E9842AF31E0E008316D4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18E9832AF31E0E008316D4 /* OnboardingViewModel.swift */; };
@@ -65,7 +64,6 @@
 		FC18E9472AF30B08008316D4 /* Starter-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Starter-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC18E94B2AF30B08008316D4 /* Starter_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starter_iOSUITests.swift; sourceTree = "<group>"; };
 		FC18E94D2AF30B08008316D4 /* Starter_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starter_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FC18E9642AF30C60008316D4 /* ButtonFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactoryTests.swift; sourceTree = "<group>"; };
 		FC18E97D2AF31DBD008316D4 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		FC18E9802AF31DDA008316D4 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		FC18E9832AF31E0E008316D4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -176,25 +174,8 @@
 		FC18E9612AF30C42008316D4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FC18E9622AF30C47008316D4 /* Custom Views */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		FC18E9622AF30C47008316D4 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				FC18E9632AF30C4E008316D4 /* Button */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		FC18E9632AF30C4E008316D4 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				FC18E9642AF30C60008316D4 /* ButtonFactoryTests.swift */,
-			);
-			path = Button;
 			sourceTree = "<group>";
 		};
 		FC18E97A2AF31D8B008316D4 /* Presentation */ = {
@@ -465,7 +446,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC18E9652AF30C60008316D4 /* ButtonFactoryTests.swift in Sources */,
 				FC18E9422AF30B08008316D4 /* Starter_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

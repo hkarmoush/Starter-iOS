@@ -35,6 +35,6 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        setupBindings()
+        setupReactiveBindings()
     }
 }

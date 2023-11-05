@@ -10,50 +10,62 @@ import RxSwift
 
 extension OnboardingViewController {
     
-    func setupBindings() {
-        bindCollectionView()
-        bindPageControl()
-        observeSizeChanges()
+    func setupReactiveBindings() {
+        bindCollectionViewToViewModel()
+        bindPageControlToCurrentIndex()
+        setupViewSizeChangeSubscription()
+        setupOrientationChangeSubscription()
     }
     
-    private func bindCollectionView() {
+    private func bindCollectionViewToViewModel() {
+        setupCollectionViewDataSource()
+        setupCollectionViewScrollEventSubscription()
+    }
+    
+    private func setupCollectionViewDataSource() {
         viewModel.pages
             .bind(to: collectionView.rx.items(cellIdentifier: OnboardingCollectionViewCell.identifier, cellType: OnboardingCollectionViewCell.self)) { _, model, cell in
                 cell.configure(with: model)
             }
             .disposed(by: disposeBag)
-        
+    }
+    
+    private func setupCollectionViewScrollEventSubscription() {
         collectionView.rx.didEndDecelerating
-            .map { [unowned self] _ in self.currentPageIndex() }
-            .subscribe(onNext: viewModel.setCurrentIndex)
+            .map { [unowned self] _ in self.calculateCurrentPageIndex() }
+            .subscribe(onNext: viewModel.setCurrentIndex(to:))
             .disposed(by: disposeBag)
     }
     
-    private func bindPageControl() {
+    private func bindPageControlToCurrentIndex() {
         viewModel.currentIndex
             .observe(on: MainScheduler.instance)
             .bind(to: pageControl.rx.currentPage)
             .disposed(by: disposeBag)
     }
     
-    private func observeSizeChanges() {
-        Observable.merge(
-            rx.viewDidLayoutSubviews.map { _ in self.view.bounds.size },
-            NotificationCenter.default.rx.notification(UIDevice.orientationDidChangeNotification).map { _ in self.view.bounds.size }
-        )
-        .distinctUntilChanged()
-        .subscribe(onNext: { [unowned self] size in
-            self.updateCollectionViewLayout(with: size)
-        })
-        .disposed(by: disposeBag)
+    private func setupViewSizeChangeSubscription() {
+        rx.viewDidLayoutSubviews
+            .map { _ in self.view.bounds.size }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [unowned self] size in self.adjustCollectionViewLayout(to: size) })
+            .disposed(by: disposeBag)
     }
     
-    func currentPageIndex() -> Int {
+    private func setupOrientationChangeSubscription() {
+        NotificationCenter.default.rx.notification(UIDevice.orientationDidChangeNotification)
+            .map { _ in self.view.bounds.size }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [unowned self] size in self.adjustCollectionViewLayout(to: size) })
+            .disposed(by: disposeBag)
+    }
+    
+    func calculateCurrentPageIndex() -> Int {
         let pageWidth = collectionView.frame.size.width
         return max(0, Int(collectionView.contentOffset.x / pageWidth))
     }
     
-    func updateCollectionViewLayout(with size: CGSize) {
+    func adjustCollectionViewLayout(to size: CGSize) {
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.itemSize = CGSize(width: size.width, height: size.height)
             layout.invalidateLayout()

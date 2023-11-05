@@ -10,6 +10,7 @@ import UIKit
 class OnboardingCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    
     weak var parentCoordinator: MainCoordinator?
     
     init(navigationController: UINavigationController) {
@@ -19,7 +20,6 @@ class OnboardingCoordinator: Coordinator {
     func start() {
         let onboardingViewModel = OnboardingViewModel()
         let onboardingViewController = OnboardingViewController(viewModel: onboardingViewModel)
-        
         onboardingViewController.coordinatorDelegate = self
         navigationController.pushViewController(onboardingViewController, animated: true)
     }

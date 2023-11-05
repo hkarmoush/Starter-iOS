@@ -23,6 +23,19 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(with page: OnboardingPage) {
+        imageView.image = UIImage(named: page.imageName)
+        titleLabel.text = page.title
+        descriptionLabel.text = page.description
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        titleLabel.text = nil
+        descriptionLabel.text = nil
+    }
+    
     private func configureSubviews() {
         configureImageView()
         configureTitleLabel()
@@ -68,8 +81,8 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 200),
-            imageView.heightAnchor.constraint(equalToConstant: 200),
+            imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.75),
         ])
     }
     
@@ -88,18 +101,5 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -16)
         ])
-    }
-    
-    func configure(with page: OnboardingPage) {
-        imageView.image = UIImage(named: page.imageName)
-        titleLabel.text = page.title
-        descriptionLabel.text = page.description
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.image = nil
-        titleLabel.text = nil
-        descriptionLabel.text = nil
     }
 }
