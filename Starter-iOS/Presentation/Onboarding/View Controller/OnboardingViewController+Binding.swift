@@ -50,22 +50,22 @@ extension OnboardingViewController {
         viewModel.currentIndex
             .take(1)
             .subscribe(onNext: { [weak self] currentPage in
-                print("Current Page: \(currentPage)") // Debug print
+                debugPrint("Current Page: \(currentPage)")
                 
                 let nextPage = currentPage + 1
                 let isLastPage = nextPage >= (self?.viewModel.pagesCount ?? 0)
                 
-                print("Next Page: \(nextPage), Is Last Page: \(isLastPage)")
+                debugPrint("Next Page: \(nextPage), Is Last Page: \(isLastPage)")
                 
                 if isLastPage {
                     self?.coordinatorDelegate?.didFinishOnboarding()
+                    DIContainer.shared.resolve(AppLaunchStateManager.self)?.isFirstLaunch = false
                 } else {
-                    let indexPath = IndexPath(item: nextPage, section: 0)
-                    print("Setting current index to: \(nextPage)")
+                    debugPrint("Setting current index to: \(nextPage)")
                     self?.viewModel.setCurrentIndex(to: nextPage)
                     DispatchQueue.main.async {
-                        print("Scrolling to item at index path: \(indexPath)")
-                        self?.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                        let offsetX = CGFloat(nextPage) * (self?.collectionView.frame.size.width)!
+                        self?.collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
                     }
                 }
             })
