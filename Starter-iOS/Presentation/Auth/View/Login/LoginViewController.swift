@@ -43,6 +43,16 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private lazy var registerButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Don't have an account? Register", for: .normal)
+        button.backgroundColor = .clear
+        button.setTitleColor(.black, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(goToRegisterView), for: .touchUpInside)
+        return button
+    }()
+    
     weak var coordinator: AuthenticationCoordinator?
     
     private var viewModel: AuthenticationViewModel!
@@ -62,13 +72,14 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
-        setupBindings()
+        bind()
     }
     
     private func setupViews() {
         setupEmailTextField()
         setupPasswordTextField()
         setupSignInButton()
+        setupRegisterButton()
     }
     
     private func setupEmailTextField() {
@@ -99,37 +110,67 @@ class LoginViewController: UIViewController {
         ])
     }
     
-    private func setupBindings() {
-        guard let viewModel = viewModel else { return }
-        let emailValid = emailTextField.rx.text.orEmpty
-            .flatMapLatest { [unowned self] email in
-                self.validationService.validateEmail(email)
-                    .startWith(false)
-            }
+    private func setupRegisterButton() {
+        view.addSubview(registerButton)
+        NSLayoutConstraint.activate([
+            registerButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 16),
+            registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
         
-        let passwordValid = passwordTextField.rx.text.orEmpty
-            .flatMapLatest { [unowned self] password in
-                self.validationService.validatePassword(password)
-                    .startWith(false)
-            }
-        Observable.combineLatest(emailValid, passwordValid) { $0 && $1 }
+    }
+    
+    func bind() {
+        bindEmailTextField()
+        bindPasswordTextField()
+        bindSignInButtonEnabledState()
+        bindSignInButtonTap()
+    }
+    
+    private func bindEmailTextField() {
+        emailTextField.rx.text.orEmpty
+            .bind(to: viewModel.email)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindPasswordTextField() {
+        passwordTextField.rx.text.orEmpty
+            .bind(to: viewModel.password)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindSignInButtonEnabledState() {
+        viewModel.isSignInActive
             .bind(to: signInButton.rx.isEnabled)
             .disposed(by: disposeBag)
-        
+    }
+    
+    private func bindSignInButtonTap() {
         signInButton.rx.tap
             .flatMapLatest { [unowned self] in
                 self.viewModel.signIn()
             }
-            .subscribe(onNext: { user in
-                // Handle successful sign-in
-            }, onError: { error in
-                // Handle sign-in error
+            .subscribe(onNext: { [weak self] user in
+                self?.handleSignInSuccess(user: user)
+            }, onError: { [weak self] error in
+                self?.handleSignInError(error: error)
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func handleSignInSuccess(user: User) {
+        // Handle successful sign-in
+    }
+    
+    private func handleSignInError(error: Error) {
+        // Handle sign-in error
     }
     
     // MARK: - User Interaction
     @objc private func signInButtonTapped() {
         // This method can be used for additional actions, if needed
+    }
+    
+    @objc private func goToRegisterView() {
+        coordinator?.showSignUp()
     }
 }

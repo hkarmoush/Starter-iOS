@@ -12,19 +12,44 @@ class AuthenticationViewModel {
     let password = BehaviorSubject<String>(value: "")
     let name = BehaviorSubject<String>(value: "")
     
+    let emailValid: Observable<Bool>
+    let passwordValid: Observable<Bool>
+    
     let isSignInActive: Observable<Bool>
     let isSignUpActive: Observable<Bool>
     
     private let authenticationUseCase: AuthenticationUseCaseProtocol
+    private let validationService: ValidationServiceProtocol
     
     private let disposeBag = DisposeBag()
     
-    init(authenticationUseCase: AuthenticationUseCaseProtocol) {
+    init(authenticationUseCase: AuthenticationUseCaseProtocol, validationService: ValidationServiceProtocol) {
         self.authenticationUseCase = authenticationUseCase
+        self.validationService = validationService
         
-        isSignInActive = Observable.combineLatest(email, password) { email, password in
-            return !email.isEmpty && !password.isEmpty
-        }
+        emailValid = email
+            .flatMapLatest { email in
+                validationService.validateEmail(email)
+                    .map { result in
+                        if case .valid = result {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+            }
+            .startWith(false)
+        
+        passwordValid = password
+            .flatMapLatest { password in
+                validationService.validatePassword(password)
+                    .map { strength in
+                        strength != .weak
+                    }
+            }
+            .startWith(false)
+        
+        isSignInActive = Observable.combineLatest(emailValid, passwordValid) { $0 && $1 }
         
         isSignUpActive = Observable.combineLatest(name, email, password) { name, email, password in
             return !name.isEmpty && !email.isEmpty && !password.isEmpty

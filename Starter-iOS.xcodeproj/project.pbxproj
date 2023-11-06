@@ -46,7 +46,7 @@
 		FC86287A2AF9069A00F3CB7A /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628792AF9069A00F3CB7A /* UserDTO.swift */; };
 		FC86287C2AF90F4100F3CB7A /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */; };
 		FC86287F2AF944B600F3CB7A /* ColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86287E2AF944B600F3CB7A /* ColorImage.swift */; };
-		FC8628812AF946BB00F3CB7A /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628802AF946BB00F3CB7A /* ValidationService.swift */; };
+		FC8628812AF946BB00F3CB7A /* ValidationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628802AF946BB00F3CB7A /* ValidationServiceProtocol.swift */; };
 		FC8628842AF9476D00F3CB7A /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628832AF9476D00F3CB7A /* ValidationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +107,7 @@
 		FC8628792AF9069A00F3CB7A /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		FC86287E2AF944B600F3CB7A /* ColorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImage.swift; sourceTree = "<group>"; };
-		FC8628802AF946BB00F3CB7A /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		FC8628802AF946BB00F3CB7A /* ValidationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceProtocol.swift; sourceTree = "<group>"; };
 		FC8628832AF9476D00F3CB7A /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -340,7 +340,7 @@
 		FC8628572AF902D500F3CB7A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FC8628582AF902E100F3CB7A /* LoginViewController.swift */,
+				FC8628852AF95C5F00F3CB7A /* Login */,
 				FC86285A2AF9030200F3CB7A /* RegisterViewController.swift */,
 			);
 			path = View;
@@ -394,7 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				FC8628692AF903FC00F3CB7A /* AuthenticationService.swift */,
-				FC8628802AF946BB00F3CB7A /* ValidationService.swift */,
+				FC8628802AF946BB00F3CB7A /* ValidationServiceProtocol.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -473,6 +473,14 @@
 				FC8628832AF9476D00F3CB7A /* ValidationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FC8628852AF95C5F00F3CB7A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628582AF902E100F3CB7A /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,7 +627,7 @@
 				FC8628592AF902E100F3CB7A /* LoginViewController.swift in Sources */,
 				FC18E92F2AF30B05008316D4 /* ViewController.swift in Sources */,
 				FC8628742AF9055F00F3CB7A /* UserRepository.swift in Sources */,
-				FC8628812AF946BB00F3CB7A /* ValidationService.swift in Sources */,
+				FC8628812AF946BB00F3CB7A /* ValidationServiceProtocol.swift in Sources */,
 				FC8628252AF703FF00F3CB7A /* MainCoordinator.swift in Sources */,
 				FC8628552AF9025500F3CB7A /* AuthenticationViewModel.swift in Sources */,
 				FC86285B2AF9030200F3CB7A /* RegisterViewController.swift in Sources */,

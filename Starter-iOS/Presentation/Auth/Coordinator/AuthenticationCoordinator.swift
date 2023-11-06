@@ -30,24 +30,30 @@ class AuthenticationCoordinator: Coordinator {
         let localDataSource = AuthenticationLocalDataSource()
         let repository = UserRepository(remoteDataSource: remoteDataSource, localDataSource: localDataSource)
         let usecase = AuthenticationUseCase(repository: repository)
-        let loginViewModel = AuthenticationViewModel(authenticationUseCase: usecase)
+        let validationService = StandardValidationService()
+        let loginViewModel = AuthenticationViewModel(authenticationUseCase: usecase, validationService: validationService)
         let loginViewController = LoginViewController(viewModel: loginViewModel)
         loginViewController.coordinator = self
         navigationController.pushViewController(loginViewController, animated: true)
     }
     
     func showSignUp() {
-//        let signUpViewModel = AuthenticationViewModel(authenticationUseCase: YourAuthUseCaseImplementation())
-//        let signUpViewController = SignUpViewController(viewModel: signUpViewModel)
-//        signUpViewController.coordinator = self
-//        navigationController.pushViewController(signUpViewController, animated: true)
+        let remoteDataSource = AuthenticationRemoteDataSource()
+        let localDataSource = AuthenticationLocalDataSource()
+        let repository = UserRepository(remoteDataSource: remoteDataSource, localDataSource: localDataSource)
+        let usecase = AuthenticationUseCase(repository: repository)
+        let validationService = StandardValidationService()
+        let viewModel = AuthenticationViewModel(authenticationUseCase: usecase, validationService: validationService)
+        let viewController = RegisterViewController(viewModel: viewModel)
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func showPasswordRecovery() {
-//        let passwordRecoveryViewModel = AuthenticationViewModel(authenticationUseCase: YourAuthUseCaseImplementation())
-//        let passwordRecoveryViewController = PasswordRecoveryViewController(viewModel: passwordRecoveryViewModel)
-//        passwordRecoveryViewController.coordinator = self
-//        navigationController.pushViewController(passwordRecoveryViewController, animated: true)
+        //        let passwordRecoveryViewModel = AuthenticationViewModel(authenticationUseCase: YourAuthUseCaseImplementation())
+        //        let passwordRecoveryViewController = PasswordRecoveryViewController(viewModel: passwordRecoveryViewModel)
+        //        passwordRecoveryViewController.coordinator = self
+        //        navigationController.pushViewController(passwordRecoveryViewController, animated: true)
     }
     
     func didFinishAuthentication() {
