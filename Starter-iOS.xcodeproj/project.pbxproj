@@ -45,6 +45,8 @@
 		FC8628782AF9064800F3CB7A /* AuthenticationLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628772AF9064800F3CB7A /* AuthenticationLocalDataSource.swift */; };
 		FC86287A2AF9069A00F3CB7A /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628792AF9069A00F3CB7A /* UserDTO.swift */; };
 		FC86287C2AF90F4100F3CB7A /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */; };
+		FC86287F2AF944B600F3CB7A /* ColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86287E2AF944B600F3CB7A /* ColorImage.swift */; };
+		FC8628812AF946BB00F3CB7A /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628802AF946BB00F3CB7A /* ValidationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		FC8628772AF9064800F3CB7A /* AuthenticationLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationLocalDataSource.swift; sourceTree = "<group>"; };
 		FC8628792AF9069A00F3CB7A /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
+		FC86287E2AF944B600F3CB7A /* ColorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImage.swift; sourceTree = "<group>"; };
+		FC8628802AF946BB00F3CB7A /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +269,7 @@
 		FC8628112AF4634F00F3CB7A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FC86287D2AF944A700F3CB7A /* Image */,
 				FC8628122AF4635800F3CB7A /* Reactive */,
 			);
 			path = Extensions;
@@ -387,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				FC8628692AF903FC00F3CB7A /* AuthenticationService.swift */,
+				FC8628802AF946BB00F3CB7A /* ValidationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -448,6 +454,14 @@
 				FC8628772AF9064800F3CB7A /* AuthenticationLocalDataSource.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		FC86287D2AF944A700F3CB7A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				FC86287E2AF944B600F3CB7A /* ColorImage.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +608,7 @@
 				FC8628592AF902E100F3CB7A /* LoginViewController.swift in Sources */,
 				FC18E92F2AF30B05008316D4 /* ViewController.swift in Sources */,
 				FC8628742AF9055F00F3CB7A /* UserRepository.swift in Sources */,
+				FC8628812AF946BB00F3CB7A /* ValidationService.swift in Sources */,
 				FC8628252AF703FF00F3CB7A /* MainCoordinator.swift in Sources */,
 				FC8628552AF9025500F3CB7A /* AuthenticationViewModel.swift in Sources */,
 				FC86285B2AF9030200F3CB7A /* RegisterViewController.swift in Sources */,
@@ -613,6 +628,7 @@
 				FC8628722AF904EA00F3CB7A /* AuthenticationUseCaseProtocol.swift in Sources */,
 				FC18E9812AF31DDA008316D4 /* OnboardingModel.swift in Sources */,
 				FC8628212AF7019200F3CB7A /* OnboardingCoordinator.swift in Sources */,
+				FC86287F2AF944B600F3CB7A /* ColorImage.swift in Sources */,
 				FC18E92D2AF30B05008316D4 /* SceneDelegate.swift in Sources */,
 				FC86282A2AF70B4000F3CB7A /* AppLaunchStateManager.swift in Sources */,
 				FC86281A2AF6EC4300F3CB7A /* OnboardingViewController+UI.swift in Sources */,

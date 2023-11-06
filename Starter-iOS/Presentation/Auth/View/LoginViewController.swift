@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 class LoginViewController: UIViewController {
-    // UI Components
+    
     private lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -34,11 +34,12 @@ class LoginViewController: UIViewController {
     private lazy var signInButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign In", for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = UIColor.systemBlue
         button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.gray, for: .disabled)
         button.layer.cornerRadius = 5
         button.translatesAutoresizingMaskIntoConstraints = false
+        let disabledColorImage = UIImage.imageWithColor(.gray)
+        button.setBackgroundImage(disabledColorImage, for: .disabled)
         return button
     }()
     
@@ -46,10 +47,17 @@ class LoginViewController: UIViewController {
     
     private var viewModel: AuthenticationViewModel!
     
-    // Rx
     private let disposeBag = DisposeBag()
     
-    // MARK: - Lifecycle
+    init(viewModel: AuthenticationViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -57,7 +65,6 @@ class LoginViewController: UIViewController {
         setupBindings()
     }
     
-    // MARK: - Setup Views
     private func setupViews() {
         setupEmailTextField()
         setupPasswordTextField()
@@ -67,42 +74,45 @@ class LoginViewController: UIViewController {
     private func setupEmailTextField() {
         view.addSubview(emailTextField)
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
     
     private func setupPasswordTextField() {
         view.addSubview(passwordTextField)
         NSLayoutConstraint.activate([
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 12),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 8),
+            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
     
     private func setupSignInButton() {
         view.addSubview(signInButton)
         NSLayoutConstraint.activate([
-            signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
             signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signInButton.widthAnchor.constraint(equalToConstant: 200),
-            signInButton.heightAnchor.constraint(equalToConstant: 50)
+            signInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+            signInButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
     
     private func setupBindings() {
         guard let viewModel = viewModel else { return }
-        emailTextField.rx.text.orEmpty
-            .bind(to: viewModel.email)
-            .disposed(by: disposeBag)
+        let emailValid = emailTextField.rx.text.orEmpty
+            .flatMapLatest { [unowned self] email in
+                self.validationService.validateEmail(email)
+                    .startWith(false)
+            }
         
-        passwordTextField.rx.text.orEmpty
-            .bind(to: viewModel.password)
-            .disposed(by: disposeBag)
-        
-        viewModel.isSignInActive
+        let passwordValid = passwordTextField.rx.text.orEmpty
+            .flatMapLatest { [unowned self] password in
+                self.validationService.validatePassword(password)
+                    .startWith(false)
+            }
+        Observable.combineLatest(emailValid, passwordValid) { $0 && $1 }
             .bind(to: signInButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
@@ -121,15 +131,5 @@ class LoginViewController: UIViewController {
     // MARK: - User Interaction
     @objc private func signInButtonTapped() {
         // This method can be used for additional actions, if needed
-    }
-    
-    // MARK: - Init with ViewModel
-    init(viewModel: AuthenticationViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

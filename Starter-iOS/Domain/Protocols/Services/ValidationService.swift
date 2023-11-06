@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol ValidationService {
+    func validateEmail(_ email: String) -> Bool
+    func validatePassword(_ password: String) -> Bool
+}
