@@ -6,9 +6,9 @@
 import Swinject
 import UIKit
 
-final class DependencyInjectionContainer {
+final class DIContainer {
     
-    static var shared = DependencyInjectionContainer()
+    static var shared = DIContainer()
     private let container = Container()
     
     private init() {
@@ -106,24 +106,6 @@ final class DependencyInjectionContainer {
             }
             debugPrint("AuthenticationViewModel dependencies resolved.")
             return AuthenticationViewModel(authenticationUseCase: authenticationUseCase, validationService: validationService)
-        }
-        
-        container.register(LoginViewController.self) { r in
-            guard let viewModel = r.resolve(AuthenticationViewModel.self) else {
-                debugPrint("Failed to resolve AuthenticationViewModel for LoginViewController.")
-                fatalError("AuthenticationViewModel not registered with container")
-            }
-            debugPrint("LoginViewController dependencies resolved.")
-            return LoginViewController(viewModel: viewModel)
-        }
-        
-        container.register(RegisterViewController.self) { r in
-            guard let viewModel = r.resolve(AuthenticationViewModel.self) else {
-                debugPrint("Failed to resolve AuthenticationViewModel for RegisterViewController.")
-                fatalError("AuthenticationViewModel not registered with container")
-            }
-            debugPrint("RegisterViewController dependencies resolved.")
-            return RegisterViewController(viewModel: viewModel)
         }
     }
     

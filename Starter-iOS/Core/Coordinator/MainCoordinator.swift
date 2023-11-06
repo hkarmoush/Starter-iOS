@@ -31,14 +31,14 @@ class MainCoordinator: Coordinator {
     }
     
     private func showOnboarding() {
-        guard let coordinator = DependencyInjectionContainer.shared.resolve(OnboardingCoordinator.self) else { return }
+        guard let coordinator = DIContainer.shared.resolve(OnboardingCoordinator.self) else { return }
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()
     }
     
     private func showAuthentication() {
-        guard let coordinator = DependencyInjectionContainer.shared.resolve(AuthenticationCoordinator.self) else { return }
+        guard let coordinator = DIContainer.shared.resolve(AuthenticationCoordinator.self) else { return }
         coordinator.delegate = self
         childCoordinators.append(coordinator)
         coordinator.start()

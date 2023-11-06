@@ -26,20 +26,17 @@ class AuthenticationCoordinator: Coordinator {
     }
     
     func showLogin() {
-        guard let viewController = DependencyInjectionContainer.shared.resolve(LoginViewController.self) else {
-            assertionFailure("LoginViewController could not be resolved")
-            return
-        }
-        
+        guard let viewModel = DIContainer.shared.resolve(AuthenticationViewModel.self) else { return }
+        let viewController = LoginViewController(viewModel: viewModel)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
     
     func showSignUp() {
-        if let viewController = DependencyInjectionContainer.shared.resolve(RegisterViewController.self) {
-            viewController.coordinator = self
-            navigationController.pushViewController(viewController, animated: true)
-        }
+        guard let viewModel = DIContainer.shared.resolve(AuthenticationViewModel.self) else { return }
+        let viewController = RegisterViewController(viewModel: viewModel)
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func showPasswordRecovery() {

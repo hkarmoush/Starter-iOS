@@ -16,9 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        mainCoordinator = DependencyInjectionContainer.shared.resolve(MainCoordinator.self)
+        mainCoordinator = DIContainer.shared.resolve(MainCoordinator.self)
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = DependencyInjectionContainer.shared.resolve(UINavigationController.self)
+        window?.rootViewController = DIContainer.shared.resolve(UINavigationController.self)
         window?.makeKeyAndVisible()
         
         mainCoordinator?.start()

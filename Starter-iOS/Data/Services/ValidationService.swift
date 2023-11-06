@@ -49,7 +49,7 @@ class StandardValidationService: ValidationServiceProtocol {
     }
     
     func validateUsername(_ username: String) -> Observable<ValidationResult> {
-        let pattern = "^[\\w]{3,18}$" // Adjust pattern as needed
+        let pattern = "^[\\w]{3,18}$"
         let isValid = NSPredicate(format:"SELF MATCHES %@", pattern).evaluate(with: username)
         return Observable.just(isValid ? .valid : .invalid("Invalid username"))
     }
