@@ -12,6 +12,13 @@ class AppLaunchStateManager: AppLaunchStateManaging {
     
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
+        registerDefaults()
+    }
+    
+    private func registerDefaults() {
+        if defaults.object(forKey: "isFirstLaunch") == nil {
+            defaults.set(true, forKey: "isFirstLaunch")
+        }
     }
     
     var isFirstLaunch: Bool {

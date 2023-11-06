@@ -32,11 +32,19 @@ extension OnboardingViewController {
         return pageControl
     }
     
+    func createNextButton() -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle("Next", for: .normal)
+        return button
+    }
+    
     func setupViews() {
         view.addSubview(collectionView)
         view.addSubview(pageControl)
+        view.addSubview(nextButton)
         setupCollectionViewConstraints()
         setupPageControlConstraints()
+        setupButtonConstraints()
     }
     
     private func setupCollectionViewConstraints() {
@@ -53,7 +61,15 @@ extension OnboardingViewController {
             pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 20)
+            pageControl.heightAnchor.constraint(equalToConstant: 16)
+        ])
+    }
+    
+    private func setupButtonConstraints() {
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 16),
         ])
     }
 }

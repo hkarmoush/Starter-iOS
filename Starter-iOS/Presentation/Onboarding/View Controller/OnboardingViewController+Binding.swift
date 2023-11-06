@@ -13,6 +13,7 @@ extension OnboardingViewController {
     func setupReactiveBindings() {
         bindCollectionViewToViewModel()
         bindPageControlToCurrentIndex()
+        bindNextButton()
         setupViewSizeChangeSubscription()
         setupOrientationChangeSubscription()
     }
@@ -28,6 +29,52 @@ extension OnboardingViewController {
                 cell.configure(with: model)
             }
             .disposed(by: disposeBag)
+    }
+    
+    private func bindNextButton() {
+        viewModel.currentIndex
+            .asDriver(onErrorJustReturn: 0)
+            .drive(onNext: { [weak self] page in
+                self?.updateButtonTitle(for: page)
+            })
+            .disposed(by: disposeBag)
+        
+        nextButton.rx.tap
+            .bind { [weak self] in
+                self?.goToNextPage()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func goToNextPage() {
+        viewModel.currentIndex
+            .take(1)
+            .subscribe(onNext: { [weak self] currentPage in
+                print("Current Page: \(currentPage)") // Debug print
+                
+                let nextPage = currentPage + 1
+                let isLastPage = nextPage >= (self?.viewModel.pagesCount ?? 0)
+                
+                print("Next Page: \(nextPage), Is Last Page: \(isLastPage)")
+                
+                if isLastPage {
+                    self?.coordinatorDelegate?.didFinishOnboarding()
+                } else {
+                    let indexPath = IndexPath(item: nextPage, section: 0)
+                    print("Setting current index to: \(nextPage)")
+                    self?.viewModel.setCurrentIndex(to: nextPage)
+                    DispatchQueue.main.async {
+                        print("Scrolling to item at index path: \(indexPath)")
+                        self?.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func updateButtonTitle(for page: Int) {
+        let isLastPage = page == viewModel.pagesCount - 1
+        nextButton.setTitle(isLastPage ? "Done" : "Next", for: .normal)
     }
     
     private func setupCollectionViewScrollEventSubscription() {

@@ -16,8 +16,9 @@ class OnboardingViewController: UIViewController {
     
     lazy var collectionView: UICollectionView = createCollectionView()
     lazy var pageControl: UIPageControl = createPageControl()
+    lazy var nextButton: UIButton = createNextButton()
     
-    weak var coordinatorDelegate: Coordinator?
+    weak var coordinatorDelegate: OnboardingCoordinator?
     
     init(viewModel: OnboardingViewModel) {
         self.viewModel = viewModel
