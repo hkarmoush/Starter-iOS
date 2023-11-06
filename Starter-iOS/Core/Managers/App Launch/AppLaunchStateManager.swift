@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AppStateManager: AppLaunchStateManaging {
+class AppLaunchStateManager: AppLaunchStateManaging {
     private let defaults: UserDefaults
     
     init(defaults: UserDefaults = .standard) {

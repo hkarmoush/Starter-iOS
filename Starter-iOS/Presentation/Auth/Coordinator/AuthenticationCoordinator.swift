@@ -26,27 +26,20 @@ class AuthenticationCoordinator: Coordinator {
     }
     
     func showLogin() {
-        let remoteDataSource = AuthenticationRemoteDataSource()
-        let localDataSource = AuthenticationLocalDataSource()
-        let repository = UserRepository(remoteDataSource: remoteDataSource, localDataSource: localDataSource)
-        let usecase = AuthenticationUseCase(repository: repository)
-        let validationService = StandardValidationService()
-        let loginViewModel = AuthenticationViewModel(authenticationUseCase: usecase, validationService: validationService)
-        let loginViewController = LoginViewController(viewModel: loginViewModel)
-        loginViewController.coordinator = self
-        navigationController.pushViewController(loginViewController, animated: true)
+        guard let viewController = DependencyInjectionContainer.shared.resolve(LoginViewController.self) else {
+            assertionFailure("LoginViewController could not be resolved")
+            return
+        }
+        
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func showSignUp() {
-        let remoteDataSource = AuthenticationRemoteDataSource()
-        let localDataSource = AuthenticationLocalDataSource()
-        let repository = UserRepository(remoteDataSource: remoteDataSource, localDataSource: localDataSource)
-        let usecase = AuthenticationUseCase(repository: repository)
-        let validationService = StandardValidationService()
-        let viewModel = AuthenticationViewModel(authenticationUseCase: usecase, validationService: validationService)
-        let viewController = RegisterViewController(viewModel: viewModel)
-        viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
+        if let viewController = DependencyInjectionContainer.shared.resolve(RegisterViewController.self) {
+            viewController.coordinator = self
+            navigationController.pushViewController(viewController, animated: true)
+        }
     }
     
     func showPasswordRecovery() {

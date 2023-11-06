@@ -11,16 +11,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     var mainCoordinator: Coordinator?
-    let appStateManager = AppStateManager()
+    let appStateManager = AppLaunchStateManager()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let navController = UINavigationController()
-        mainCoordinator = MainCoordinator(navigationController: navController, appLaunchStateManager: appStateManager)
-        
+        mainCoordinator = DependencyInjectionContainer.shared.resolve(MainCoordinator.self)
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = navController
+        window?.rootViewController = DependencyInjectionContainer.shared.resolve(UINavigationController.self)
         window?.makeKeyAndVisible()
         
         mainCoordinator?.start()

@@ -31,17 +31,17 @@ class MainCoordinator: Coordinator {
     }
     
     private func showOnboarding() {
-        let coordinator = OnboardingCoordinator(navigationController: navigationController)
+        guard let coordinator = DependencyInjectionContainer.shared.resolve(OnboardingCoordinator.self) else { return }
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()
     }
     
     private func showAuthentication() {
-        let authCoordinator = AuthenticationCoordinator(navigationController: navigationController)
-        authCoordinator.delegate = self
-        childCoordinators.append(authCoordinator)
-        authCoordinator.start()
+        guard let coordinator = DependencyInjectionContainer.shared.resolve(AuthenticationCoordinator.self) else { return }
+        coordinator.delegate = self
+        childCoordinators.append(coordinator)
+        coordinator.start()
     }
     
     private func showMainInterface() {

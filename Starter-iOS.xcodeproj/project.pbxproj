@@ -48,6 +48,7 @@
 		FC86287F2AF944B600F3CB7A /* ColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86287E2AF944B600F3CB7A /* ColorImage.swift */; };
 		FC8628812AF946BB00F3CB7A /* ValidationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628802AF946BB00F3CB7A /* ValidationServiceProtocol.swift */; };
 		FC8628842AF9476D00F3CB7A /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628832AF9476D00F3CB7A /* ValidationService.swift */; };
+		FC86288A2AF96A7600F3CB7A /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628892AF96A7600F3CB7A /* DependencyInjectionContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		FC86287E2AF944B600F3CB7A /* ColorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImage.swift; sourceTree = "<group>"; };
 		FC8628802AF946BB00F3CB7A /* ValidationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceProtocol.swift; sourceTree = "<group>"; };
 		FC8628832AF9476D00F3CB7A /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		FC8628892AF96A7600F3CB7A /* DependencyInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 		FC18E95A2AF30B79008316D4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FC8628882AF96A5700F3CB7A /* Dependency Injection */,
 				FC8628262AF70B0B00F3CB7A /* Managers */,
 				FC86281D2AF7016700F3CB7A /* Coordinator */,
 				FC8628112AF4634F00F3CB7A /* Extensions */,
@@ -483,6 +486,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		FC8628882AF96A5700F3CB7A /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628892AF96A7600F3CB7A /* DependencyInjectionContainer.swift */,
+			);
+			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -653,6 +664,7 @@
 				FC86282A2AF70B4000F3CB7A /* AppLaunchStateManager.swift in Sources */,
 				FC86281A2AF6EC4300F3CB7A /* OnboardingViewController+UI.swift in Sources */,
 				FC86286A2AF903FC00F3CB7A /* AuthenticationService.swift in Sources */,
+				FC86288A2AF96A7600F3CB7A /* DependencyInjectionContainer.swift in Sources */,
 				FC86287A2AF9069A00F3CB7A /* UserDTO.swift in Sources */,
 				FC8628782AF9064800F3CB7A /* AuthenticationLocalDataSource.swift in Sources */,
 			);

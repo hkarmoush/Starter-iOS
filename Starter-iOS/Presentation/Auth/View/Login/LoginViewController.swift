@@ -119,7 +119,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    func bind() {
+    private func bind() {
         bindEmailTextField()
         bindPasswordTextField()
         bindSignInButtonEnabledState()
@@ -173,4 +173,5 @@ class LoginViewController: UIViewController {
     @objc private func goToRegisterView() {
         coordinator?.showSignUp()
     }
+    
 }
