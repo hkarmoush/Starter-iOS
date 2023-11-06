@@ -21,8 +21,12 @@ class MainCoordinator: Coordinator {
     func start() {
         if appLaunchStateManager.isFirstLaunch {
             showOnboarding()
-        } else {
-            showOnboarding()
+        } 
+//        else if appLaunchStateManager.isUserSignedIn {
+//            showMainInterface()
+//        } 
+        else {
+            showAuthentication()
         }
     }
     
@@ -33,17 +37,34 @@ class MainCoordinator: Coordinator {
         coordinator.start()
     }
     
+    private func showAuthentication() {
+        let authCoordinator = AuthenticationCoordinator(navigationController: navigationController)
+        authCoordinator.delegate = self
+        childCoordinators.append(authCoordinator)
+        authCoordinator.start()
+    }
+    
     private func showMainInterface() {
-        // Setup and show the main view controller, for example:
-        //        let homeViewController = HomeViewController()
-        //        homeViewController.coordinator = self
-        //        navigationController.setViewControllers([homeViewController], animated: false)
+        // Setup and show the main view controller...
     }
     
     func childDidFinish(_ child: Coordinator?) {
         if let child = child, let index = childCoordinators.firstIndex(where: { $0 === child }) {
             childCoordinators.remove(at: index)
         }
-        // Here you can decide if you need to show the main interface or something else
+        // Decide what to show next after child coordinator finishes
+        if child is OnboardingCoordinator {
+            showAuthentication()
+        } else if child is AuthenticationCoordinator {
+            showMainInterface()
+        }
+    }
+}
+
+// Make MainCoordinator conform to AuthenticationCoordinatorDelegate
+extension MainCoordinator: AuthenticationCoordinatorDelegate {
+    func didCompleteAuthentication(in coordinator: AuthenticationCoordinator) {
+        childDidFinish(coordinator)
+        // Possibly handle post-authentication logic
     }
 }

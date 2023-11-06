@@ -32,6 +32,19 @@
 		FC8628252AF703FF00F3CB7A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628242AF703FF00F3CB7A /* MainCoordinator.swift */; };
 		FC8628282AF70B1D00F3CB7A /* AppLaunchStateManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628272AF70B1D00F3CB7A /* AppLaunchStateManaging.swift */; };
 		FC86282A2AF70B4000F3CB7A /* AppLaunchStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628292AF70B4000F3CB7A /* AppLaunchStateManager.swift */; };
+		FC8628552AF9025500F3CB7A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628542AF9025500F3CB7A /* AuthenticationViewModel.swift */; };
+		FC8628592AF902E100F3CB7A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628582AF902E100F3CB7A /* LoginViewController.swift */; };
+		FC86285B2AF9030200F3CB7A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86285A2AF9030200F3CB7A /* RegisterViewController.swift */; };
+		FC8628602AF9034300F3CB7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86285F2AF9034300F3CB7A /* User.swift */; };
+		FC8628632AF9037F00F3CB7A /* AuthenticationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628622AF9037F00F3CB7A /* AuthenticationUseCase.swift */; };
+		FC8628682AF903E700F3CB7A /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628672AF903E700F3CB7A /* UserRepositoryProtocol.swift */; };
+		FC86286A2AF903FC00F3CB7A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628692AF903FC00F3CB7A /* AuthenticationService.swift */; };
+		FC8628722AF904EA00F3CB7A /* AuthenticationUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628712AF904EA00F3CB7A /* AuthenticationUseCaseProtocol.swift */; };
+		FC8628742AF9055F00F3CB7A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628732AF9055F00F3CB7A /* UserRepository.swift */; };
+		FC8628762AF905ED00F3CB7A /* AuthenticationRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628752AF905ED00F3CB7A /* AuthenticationRemoteDataSource.swift */; };
+		FC8628782AF9064800F3CB7A /* AuthenticationLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628772AF9064800F3CB7A /* AuthenticationLocalDataSource.swift */; };
+		FC86287A2AF9069A00F3CB7A /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628792AF9069A00F3CB7A /* UserDTO.swift */; };
+		FC86287C2AF90F4100F3CB7A /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +90,19 @@
 		FC8628242AF703FF00F3CB7A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FC8628272AF70B1D00F3CB7A /* AppLaunchStateManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchStateManaging.swift; sourceTree = "<group>"; };
 		FC8628292AF70B4000F3CB7A /* AppLaunchStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchStateManager.swift; sourceTree = "<group>"; };
+		FC8628542AF9025500F3CB7A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		FC8628582AF902E100F3CB7A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FC86285A2AF9030200F3CB7A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FC86285F2AF9034300F3CB7A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FC8628622AF9037F00F3CB7A /* AuthenticationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCase.swift; sourceTree = "<group>"; };
+		FC8628672AF903E700F3CB7A /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		FC8628692AF903FC00F3CB7A /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		FC8628712AF904EA00F3CB7A /* AuthenticationUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCaseProtocol.swift; sourceTree = "<group>"; };
+		FC8628732AF9055F00F3CB7A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		FC8628752AF905ED00F3CB7A /* AuthenticationRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRemoteDataSource.swift; sourceTree = "<group>"; };
+		FC8628772AF9064800F3CB7A /* AuthenticationLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationLocalDataSource.swift; sourceTree = "<group>"; };
+		FC8628792AF9069A00F3CB7A /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +157,8 @@
 		FC18E9292AF30B05008316D4 /* Starter-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FC86286B2AF9040600F3CB7A /* Data */,
+				FC86285D2AF9032800F3CB7A /* Domain */,
 				FC18E97A2AF31D8B008316D4 /* Presentation */,
 				FC18E95A2AF30B79008316D4 /* Core */,
 				FC18E92A2AF30B05008316D4 /* AppDelegate.swift */,
@@ -181,6 +209,7 @@
 		FC18E97A2AF31D8B008316D4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FC86282F2AF8143700F3CB7A /* Auth */,
 				FC18E97B2AF31D94008316D4 /* Onboarding */,
 			);
 			path = Presentation;
@@ -281,6 +310,144 @@
 				FC8628292AF70B4000F3CB7A /* AppLaunchStateManager.swift */,
 			);
 			path = "App Launch";
+			sourceTree = "<group>";
+		};
+		FC86282F2AF8143700F3CB7A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FC86285C2AF9031C00F3CB7A /* Coordinator */,
+				FC8628572AF902D500F3CB7A /* View */,
+				FC8628532AF9023800F3CB7A /* ViewModel */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FC8628532AF9023800F3CB7A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628542AF9025500F3CB7A /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FC8628572AF902D500F3CB7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628582AF902E100F3CB7A /* LoginViewController.swift */,
+				FC86285A2AF9030200F3CB7A /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC86285C2AF9031C00F3CB7A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FC86285D2AF9032800F3CB7A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628642AF9038800F3CB7A /* Protocols */,
+				FC8628612AF9036900F3CB7A /* Use Cases */,
+				FC86285E2AF9033100F3CB7A /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FC86285E2AF9033100F3CB7A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FC86285F2AF9034300F3CB7A /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FC8628612AF9036900F3CB7A /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628622AF9037F00F3CB7A /* AuthenticationUseCase.swift */,
+				FC8628712AF904EA00F3CB7A /* AuthenticationUseCaseProtocol.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		FC8628642AF9038800F3CB7A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628662AF9039E00F3CB7A /* Repositories */,
+				FC8628652AF9039300F3CB7A /* Services */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FC8628652AF9039300F3CB7A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628692AF903FC00F3CB7A /* AuthenticationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FC8628662AF9039E00F3CB7A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628672AF903E700F3CB7A /* UserRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FC86286B2AF9040600F3CB7A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FC86286E2AF9042700F3CB7A /* DataSources */,
+				FC86286D2AF9041A00F3CB7A /* Repositories */,
+				FC86286C2AF9040F00F3CB7A /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FC86286C2AF9040F00F3CB7A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628792AF9069A00F3CB7A /* UserDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC86286D2AF9041A00F3CB7A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628732AF9055F00F3CB7A /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FC86286E2AF9042700F3CB7A /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628702AF9043D00F3CB7A /* Local */,
+				FC86286F2AF9043800F3CB7A /* Remote */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		FC86286F2AF9043800F3CB7A /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628752AF905ED00F3CB7A /* AuthenticationRemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		FC8628702AF9043D00F3CB7A /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628772AF9064800F3CB7A /* AuthenticationLocalDataSource.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,22 +590,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8628682AF903E700F3CB7A /* UserRepositoryProtocol.swift in Sources */,
+				FC8628592AF902E100F3CB7A /* LoginViewController.swift in Sources */,
 				FC18E92F2AF30B05008316D4 /* ViewController.swift in Sources */,
+				FC8628742AF9055F00F3CB7A /* UserRepository.swift in Sources */,
 				FC8628252AF703FF00F3CB7A /* MainCoordinator.swift in Sources */,
+				FC8628552AF9025500F3CB7A /* AuthenticationViewModel.swift in Sources */,
+				FC86285B2AF9030200F3CB7A /* RegisterViewController.swift in Sources */,
 				FC18E9912AF31FB8008316D4 /* OnboardingViewController.swift in Sources */,
 				FC18E9842AF31E0E008316D4 /* OnboardingViewModel.swift in Sources */,
 				FC8628102AF4611400F3CB7A /* OnboardingCollectionViewCell.swift in Sources */,
+				FC8628762AF905ED00F3CB7A /* AuthenticationRemoteDataSource.swift in Sources */,
+				FC8628602AF9034300F3CB7A /* User.swift in Sources */,
+				FC8628632AF9037F00F3CB7A /* AuthenticationUseCase.swift in Sources */,
 				FC18E97E2AF31DBD008316D4 /* OnboardingPage.swift in Sources */,
+				FC86287C2AF90F4100F3CB7A /* AuthenticationCoordinator.swift in Sources */,
 				FC8628142AF4636300F3CB7A /* Reactive.swift in Sources */,
 				FC18E92B2AF30B05008316D4 /* AppDelegate.swift in Sources */,
 				FC86281C2AF6ECD900F3CB7A /* OnboardingViewController+Binding.swift in Sources */,
 				FC86281F2AF7017A00F3CB7A /* Coordinator.swift in Sources */,
 				FC8628282AF70B1D00F3CB7A /* AppLaunchStateManaging.swift in Sources */,
+				FC8628722AF904EA00F3CB7A /* AuthenticationUseCaseProtocol.swift in Sources */,
 				FC18E9812AF31DDA008316D4 /* OnboardingModel.swift in Sources */,
 				FC8628212AF7019200F3CB7A /* OnboardingCoordinator.swift in Sources */,
 				FC18E92D2AF30B05008316D4 /* SceneDelegate.swift in Sources */,
 				FC86282A2AF70B4000F3CB7A /* AppLaunchStateManager.swift in Sources */,
 				FC86281A2AF6EC4300F3CB7A /* OnboardingViewController+UI.swift in Sources */,
+				FC86286A2AF903FC00F3CB7A /* AuthenticationService.swift in Sources */,
+				FC86287A2AF9069A00F3CB7A /* UserDTO.swift in Sources */,
+				FC8628782AF9064800F3CB7A /* AuthenticationLocalDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
