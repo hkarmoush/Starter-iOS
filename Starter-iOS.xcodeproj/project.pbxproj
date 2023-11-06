@@ -47,6 +47,7 @@
 		FC86287C2AF90F4100F3CB7A /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */; };
 		FC86287F2AF944B600F3CB7A /* ColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86287E2AF944B600F3CB7A /* ColorImage.swift */; };
 		FC8628812AF946BB00F3CB7A /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628802AF946BB00F3CB7A /* ValidationService.swift */; };
+		FC8628842AF9476D00F3CB7A /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8628832AF9476D00F3CB7A /* ValidationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		FC86287B2AF90F4100F3CB7A /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		FC86287E2AF944B600F3CB7A /* ColorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImage.swift; sourceTree = "<group>"; };
 		FC8628802AF946BB00F3CB7A /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		FC8628832AF9476D00F3CB7A /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +410,7 @@
 		FC86286B2AF9040600F3CB7A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FC8628822AF9476100F3CB7A /* Services */,
 				FC86286E2AF9042700F3CB7A /* DataSources */,
 				FC86286D2AF9041A00F3CB7A /* Repositories */,
 				FC86286C2AF9040F00F3CB7A /* Models */,
@@ -462,6 +465,14 @@
 				FC86287E2AF944B600F3CB7A /* ColorImage.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		FC8628822AF9476100F3CB7A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FC8628832AF9476D00F3CB7A /* ValidationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -618,6 +629,7 @@
 				FC8628762AF905ED00F3CB7A /* AuthenticationRemoteDataSource.swift in Sources */,
 				FC8628602AF9034300F3CB7A /* User.swift in Sources */,
 				FC8628632AF9037F00F3CB7A /* AuthenticationUseCase.swift in Sources */,
+				FC8628842AF9476D00F3CB7A /* ValidationService.swift in Sources */,
 				FC18E97E2AF31DBD008316D4 /* OnboardingPage.swift in Sources */,
 				FC86287C2AF90F4100F3CB7A /* AuthenticationCoordinator.swift in Sources */,
 				FC8628142AF4636300F3CB7A /* Reactive.swift in Sources */,

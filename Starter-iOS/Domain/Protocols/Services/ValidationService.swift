@@ -5,9 +5,22 @@
 //  Created by Hasan Armoush on 06/11/2023.
 //
 
-import Foundation
+import RxSwift
 
-protocol ValidationService {
-    func validateEmail(_ email: String) -> Bool
-    func validatePassword(_ password: String) -> Bool
+protocol ValidationServiceProtocol {
+    func validateEmail(_ email: String) -> Observable<ValidationResult>
+    func validatePassword(_ password: String) -> Observable<PasswordStrength>
+    func validatePhoneNumber(_ phoneNumber: String) -> Observable<ValidationResult>
+    func validateUsername(_ username: String) -> Observable<ValidationResult>
+}
+
+enum PasswordStrength {
+    case weak
+    case medium
+    case strong
+}
+
+enum ValidationResult {
+    case valid
+    case invalid(String)
 }
